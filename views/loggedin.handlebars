@@ -1,0 +1,620 @@
+
+
+<h1>
+    #BACK2 -> UCF2018B2SCHOOL
+</h1>
+
+<h3>
+    You are logged in 
+</h3>
+<h2 id = 'myname'>
+{{name}}
+</h2>
+
+{{!--
+<h2>
+    {{email}}
+</h2>
+
+<h2>
+    {{userid}}
+</h2> --}}
+
+
+
+
+
+<div id="fbbutton">
+    <!-- facebook login button, scope decides what is passed but you have to specify on the facebook page for certain things -->
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+</div>
+
+<button id="logout" href='/index'> Logout</button>
+
+
+{{!-- Fill out name
+<form>
+    <input class="name" type="text">
+</form>
+
+Fill out id
+<form>
+    <input class="id" type="text">
+</form>
+
+Fill out email
+
+<form>
+    <input class="email" type="text">
+</form> --}} {{!--
+<a id='addClass' href="#">Add a class! Insert teacher name below!</a> --}}
+
+<h2>Add a class! Insert class information below!</h2>
+
+<h3>CLASS FILTERS</h3>
+
+<select id="classFilterEntry" title="Choose a Course Prefix">
+    <option value="-1">All prefixes…</option>
+    <option value="ACG">ACG</option>
+    <option value="ADE">ADE</option>
+    <option value="ADV">ADV</option>
+    <option value="AFA">AFA</option>
+    <option value="AFH">AFH</option>
+    <option value="AFR">AFR</option>
+    <option value="AMH">AMH</option>
+    <option value="AML">AML</option>
+    <option value="ANT">ANT</option>
+    <option value="APK">APK</option>
+    <option value="ARA">ARA</option>
+    <option value="ARC">ARC</option>
+    <option value="ARE">ARE</option>
+    <option value="ARH">ARH</option>
+    <option value="ART">ART</option>
+    <option value="ASH">ASH</option>
+    <option value="ASL">ASL</option>
+    <option value="AST">AST</option>
+    <option value="ATR">ATR</option>
+    <option value="BCH">BCH</option>
+    <option value="BME">BME</option>
+    <option value="BOT">BOT</option>
+    <option value="BSC">BSC</option>
+    <option value="BTE">BTE</option>
+    <option value="BUL">BUL</option>
+    <option value="CAP">CAP</option>
+    <option value="CCE">CCE</option>
+    <option value="CCJ">CCJ</option>
+    <option value="CDA">CDA</option>
+    <option value="CEG">CEG</option>
+    <option value="CEN">CEN</option>
+    <option value="CES">CES</option>
+    <option value="CET">CET</option>
+    <option value="CGN">CGN</option>
+    <option value="CGS">CGS</option>
+    <option value="CHI">CHI</option>
+    <option value="CHM">CHM</option>
+    <option value="CHS">CHS</option>
+    <option value="CIS">CIS</option>
+    <option value="CJC">CJC</option>
+    <option value="CJE">CJE</option>
+    <option value="CJJ">CJJ</option>
+    <option value="CJL">CJL</option>
+    <option value="CJT">CJT</option>
+    <option value="CLP">CLP</option>
+    <option value="CLT">CLT</option>
+    <option value="CNT">CNT</option>
+    <option value="COM">COM</option>
+    <option value="COP">COP</option>
+    <option value="COT">COT</option>
+    <option value="CPO">CPO</option>
+    <option value="CRW">CRW</option>
+    <option value="CWR">CWR</option>
+    <option value="DAA">DAA</option>
+    <option value="DAE">DAE</option>
+    <option value="DAN">DAN</option>
+    <option value="DEP">DEP</option>
+    <option value="DIG">DIG</option>
+    <option value="DSC">DSC</option>
+    <option value="EAB">EAB</option>
+    <option value="EAP">EAP</option>
+    <option value="EAS">EAS</option>
+    <option value="ECM">ECM</option>
+    <option value="ECO">ECO</option>
+    <option value="ECP">ECP</option>
+    <option value="ECS">ECS</option>
+    <option value="ECT">ECT</option>
+    <option value="ECW">ECW</option>
+    <option value="EDE">EDE</option>
+    <option value="EDF">EDF</option>
+    <option value="EDG">EDG</option>
+    <option value="EDP">EDP</option>
+    <option value="EEC">EEC</option>
+    <option value="EEE">EEE</option>
+    <option value="EEL">EEL</option>
+    <option value="EES">EES</option>
+    <option value="EEX">EEX</option>
+    <option value="EGM">EGM</option>
+    <option value="EGN">EGN</option>
+    <option value="EGS">EGS</option>
+    <option value="EIN">EIN</option>
+    <option value="EMA">EMA</option>
+    <option value="EME">EME</option>
+    <option value="EML">EML</option>
+    <option value="ENC">ENC</option>
+    <option value="ENG">ENG</option>
+    <option value="ENL">ENL</option>
+    <option value="ENT">ENT</option>
+    <option value="ENV">ENV</option>
+    <option value="ENY">ENY</option>
+    <option value="ESE">ESE</option>
+    <option value="ESI">ESI</option>
+    <option value="ETI">ETI</option>
+    <option value="EUH">EUH</option>
+    <option value="EVR">EVR</option>
+    <option value="EXP">EXP</option>
+    <option value="FIL">FIL</option>
+    <option value="FIN">FIN</option>
+    <option value="FLE">FLE</option>
+    <option value="FRE">FRE</option>
+    <option value="FRT">FRT</option>
+    <option value="FRW">FRW</option>
+    <option value="FSS">FSS</option>
+    <option value="GEA">GEA</option>
+    <option value="GEB">GEB</option>
+    <option value="GEO">GEO</option>
+    <option value="GER">GER</option>
+    <option value="GEW">GEW</option>
+    <option value="GEY">GEY</option>
+    <option value="GIS">GIS</option>
+    <option value="GLY">GLY</option>
+    <option value="GRA">GRA</option>
+    <option value="HBR">HBR</option>
+    <option value="HFT">HFT</option>
+    <option value="HIM">HIM</option>
+    <option value="HIS">HIS</option>
+    <option value="HLP">HLP</option>
+    <option value="HSA">HSA</option>
+    <option value="HSC">HSC</option>
+    <option value="HUM">HUM</option>
+    <option value="HUN">HUN</option>
+    <option value="IDH">IDH</option>
+    <option value="IDS">IDS</option>
+    <option value="INP">INP</option>
+    <option value="INR">INR</option>
+    <option value="ISC">ISC</option>
+    <option value="ITA">ITA</option>
+    <option value="ITT">ITT</option>
+    <option value="ITW">ITW</option>
+    <option value="JOU">JOU</option>
+    <option value="JPN">JPN</option>
+    <option value="JST">JST</option>
+    <option value="KOR">KOR</option>
+    <option value="LAE">LAE</option>
+    <option value="LAH">LAH</option>
+    <option value="LAS">LAS</option>
+    <option value="LDR">LDR</option>
+    <option value="LEI">LEI</option>
+    <option value="LIN">LIN</option>
+    <option value="LIT">LIT</option>
+    <option value="MAA">MAA</option>
+    <option value="MAC">MAC</option>
+    <option value="MAD">MAD</option>
+    <option value="MAE">MAE</option>
+    <option value="MAN">MAN</option>
+    <option value="MAP">MAP</option>
+    <option value="MAR">MAR</option>
+    <option value="MAS">MAS</option>
+    <option value="MAT">MAT</option>
+    <option value="MCB">MCB</option>
+    <option value="MET">MET</option>
+    <option value="MGF">MGF</option>
+    <option value="MHF">MHF</option>
+    <option value="MHS">MHS</option>
+    <option value="MLS">MLS</option>
+    <option value="MMC">MMC</option>
+    <option value="MSL">MSL</option>
+    <option value="MTG">MTG</option>
+    <option value="MUC">MUC</option>
+    <option value="MUE">MUE</option>
+    <option value="MUG">MUG</option>
+    <option value="MUH">MUH</option>
+    <option value="MUL">MUL</option>
+    <option value="MUN">MUN</option>
+    <option value="MUO">MUO</option>
+    <option value="MUS">MUS</option>
+    <option value="MUT">MUT</option>
+    <option value="MVB">MVB</option>
+    <option value="MVJ">MVJ</option>
+    <option value="MVK">MVK</option>
+    <option value="MVP">MVP</option>
+    <option value="MVS">MVS</option>
+    <option value="MVV">MVV</option>
+    <option value="MVW">MVW</option>
+    <option value="NSP">NSP</option>
+    <option value="NUR">NUR</option>
+    <option value="OCE">OCE</option>
+    <option value="OSE">OSE</option>
+    <option value="PAD">PAD</option>
+    <option value="PAF">PAF</option>
+    <option value="PAZ">PAZ</option>
+    <option value="PCB">PCB</option>
+    <option value="PCO">PCO</option>
+    <option value="PEL">PEL</option>
+    <option value="PEM">PEM</option>
+    <option value="PEO">PEO</option>
+    <option value="PET">PET</option>
+    <option value="PGY">PGY</option>
+    <option value="PHH">PHH</option>
+    <option value="PHI">PHI</option>
+    <option value="PHM">PHM</option>
+    <option value="PHP">PHP</option>
+    <option value="PHT">PHT</option>
+    <option value="PHY">PHY</option>
+    <option value="PHZ">PHZ</option>
+    <option value="PLA">PLA</option>
+    <option value="POR">POR</option>
+    <option value="POS">POS</option>
+    <option value="POT">POT</option>
+    <option value="PPE">PPE</option>
+    <option value="PSB">PSB</option>
+    <option value="PSC">PSC</option>
+    <option value="PSY">PSY</option>
+    <option value="PUP">PUP</option>
+    <option value="PUR">PUR</option>
+    <option value="QMB">QMB</option>
+    <option value="REA">REA</option>
+    <option value="RED">RED</option>
+    <option value="REE">REE</option>
+    <option value="REL">REL</option>
+    <option value="RMI">RMI</option>
+    <option value="RTV">RTV</option>
+    <option value="RUS">RUS</option>
+    <option value="RUT">RUT</option>
+    <option value="SCC">SCC</option>
+    <option value="SCE">SCE</option>
+    <option value="SLS">SLS</option>
+    <option value="SOP">SOP</option>
+    <option value="SOW">SOW</option>
+    <option value="SPA">SPA</option>
+    <option value="SPB">SPB</option>
+    <option value="SPC">SPC</option>
+    <option value="SPM">SPM</option>
+    <option value="SPN">SPN</option>
+    <option value="SPT">SPT</option>
+    <option value="SPW">SPW</option>
+    <option value="SSE">SSE</option>
+    <option value="STA">STA</option>
+    <option value="SYA">SYA</option>
+    <option value="SYD">SYD</option>
+    <option value="SYG">SYG</option>
+    <option value="SYO">SYO</option>
+    <option value="SYP">SYP</option>
+    <option value="TAX">TAX</option>
+    <option value="THE">THE</option>
+    <option value="TPA">TPA</option>
+    <option value="TPP">TPP</option>
+    <option value="TSL">TSL</option>
+    <option value="TTE">TTE</option>
+    <option value="VIC">VIC</option>
+    <option value="WOH">WOH</option>
+    <option value="WST">WST</option>
+    <option value="ZOO">ZOO</option>
+</select> 
+
+<button id = 'classFilter'>
+    CLASS FILTERS 
+</button>
+
+<h3>MESSAGE FILTERS</h3>
+
+<button id='hasRating'>has Rating</button>
+<button id='sellingTextbook'>selling Textbook</button>
+<button id='buyingTextbook'>buying Textbook</button>
+<button id='hasReview'>has Review</button>
+
+<br>
+<br>
+
+
+<form>
+    Subject Entry
+    <select id="subjectEntry" title="Choose a Course Prefix">
+    <option value="-1">All prefixes…</option>
+    <option value="ACG">ACG</option>
+    <option value="ADE">ADE</option>
+    <option value="ADV">ADV</option>
+    <option value="AFA">AFA</option>
+    <option value="AFH">AFH</option>
+    <option value="AFR">AFR</option>
+    <option value="AMH">AMH</option>
+    <option value="AML">AML</option>
+    <option value="ANT">ANT</option>
+    <option value="APK">APK</option>
+    <option value="ARA">ARA</option>
+    <option value="ARC">ARC</option>
+    <option value="ARE">ARE</option>
+    <option value="ARH">ARH</option>
+    <option value="ART">ART</option>
+    <option value="ASH">ASH</option>
+    <option value="ASL">ASL</option>
+    <option value="AST">AST</option>
+    <option value="ATR">ATR</option>
+    <option value="BCH">BCH</option>
+    <option value="BME">BME</option>
+    <option value="BOT">BOT</option>
+    <option value="BSC">BSC</option>
+    <option value="BTE">BTE</option>
+    <option value="BUL">BUL</option>
+    <option value="CAP">CAP</option>
+    <option value="CCE">CCE</option>
+    <option value="CCJ">CCJ</option>
+    <option value="CDA">CDA</option>
+    <option value="CEG">CEG</option>
+    <option value="CEN">CEN</option>
+    <option value="CES">CES</option>
+    <option value="CET">CET</option>
+    <option value="CGN">CGN</option>
+    <option value="CGS">CGS</option>
+    <option value="CHI">CHI</option>
+    <option value="CHM">CHM</option>
+    <option value="CHS">CHS</option>
+    <option value="CIS">CIS</option>
+    <option value="CJC">CJC</option>
+    <option value="CJE">CJE</option>
+    <option value="CJJ">CJJ</option>
+    <option value="CJL">CJL</option>
+    <option value="CJT">CJT</option>
+    <option value="CLP">CLP</option>
+    <option value="CLT">CLT</option>
+    <option value="CNT">CNT</option>
+    <option value="COM">COM</option>
+    <option value="COP">COP</option>
+    <option value="COT">COT</option>
+    <option value="CPO">CPO</option>
+    <option value="CRW">CRW</option>
+    <option value="CWR">CWR</option>
+    <option value="DAA">DAA</option>
+    <option value="DAE">DAE</option>
+    <option value="DAN">DAN</option>
+    <option value="DEP">DEP</option>
+    <option value="DIG">DIG</option>
+    <option value="DSC">DSC</option>
+    <option value="EAB">EAB</option>
+    <option value="EAP">EAP</option>
+    <option value="EAS">EAS</option>
+    <option value="ECM">ECM</option>
+    <option value="ECO">ECO</option>
+    <option value="ECP">ECP</option>
+    <option value="ECS">ECS</option>
+    <option value="ECT">ECT</option>
+    <option value="ECW">ECW</option>
+    <option value="EDE">EDE</option>
+    <option value="EDF">EDF</option>
+    <option value="EDG">EDG</option>
+    <option value="EDP">EDP</option>
+    <option value="EEC">EEC</option>
+    <option value="EEE">EEE</option>
+    <option value="EEL">EEL</option>
+    <option value="EES">EES</option>
+    <option value="EEX">EEX</option>
+    <option value="EGM">EGM</option>
+    <option value="EGN">EGN</option>
+    <option value="EGS">EGS</option>
+    <option value="EIN">EIN</option>
+    <option value="EMA">EMA</option>
+    <option value="EME">EME</option>
+    <option value="EML">EML</option>
+    <option value="ENC">ENC</option>
+    <option value="ENG">ENG</option>
+    <option value="ENL">ENL</option>
+    <option value="ENT">ENT</option>
+    <option value="ENV">ENV</option>
+    <option value="ENY">ENY</option>
+    <option value="ESE">ESE</option>
+    <option value="ESI">ESI</option>
+    <option value="ETI">ETI</option>
+    <option value="EUH">EUH</option>
+    <option value="EVR">EVR</option>
+    <option value="EXP">EXP</option>
+    <option value="FIL">FIL</option>
+    <option value="FIN">FIN</option>
+    <option value="FLE">FLE</option>
+    <option value="FRE">FRE</option>
+    <option value="FRT">FRT</option>
+    <option value="FRW">FRW</option>
+    <option value="FSS">FSS</option>
+    <option value="GEA">GEA</option>
+    <option value="GEB">GEB</option>
+    <option value="GEO">GEO</option>
+    <option value="GER">GER</option>
+    <option value="GEW">GEW</option>
+    <option value="GEY">GEY</option>
+    <option value="GIS">GIS</option>
+    <option value="GLY">GLY</option>
+    <option value="GRA">GRA</option>
+    <option value="HBR">HBR</option>
+    <option value="HFT">HFT</option>
+    <option value="HIM">HIM</option>
+    <option value="HIS">HIS</option>
+    <option value="HLP">HLP</option>
+    <option value="HSA">HSA</option>
+    <option value="HSC">HSC</option>
+    <option value="HUM">HUM</option>
+    <option value="HUN">HUN</option>
+    <option value="IDH">IDH</option>
+    <option value="IDS">IDS</option>
+    <option value="INP">INP</option>
+    <option value="INR">INR</option>
+    <option value="ISC">ISC</option>
+    <option value="ITA">ITA</option>
+    <option value="ITT">ITT</option>
+    <option value="ITW">ITW</option>
+    <option value="JOU">JOU</option>
+    <option value="JPN">JPN</option>
+    <option value="JST">JST</option>
+    <option value="KOR">KOR</option>
+    <option value="LAE">LAE</option>
+    <option value="LAH">LAH</option>
+    <option value="LAS">LAS</option>
+    <option value="LDR">LDR</option>
+    <option value="LEI">LEI</option>
+    <option value="LIN">LIN</option>
+    <option value="LIT">LIT</option>
+    <option value="MAA">MAA</option>
+    <option value="MAC">MAC</option>
+    <option value="MAD">MAD</option>
+    <option value="MAE">MAE</option>
+    <option value="MAN">MAN</option>
+    <option value="MAP">MAP</option>
+    <option value="MAR">MAR</option>
+    <option value="MAS">MAS</option>
+    <option value="MAT">MAT</option>
+    <option value="MCB">MCB</option>
+    <option value="MET">MET</option>
+    <option value="MGF">MGF</option>
+    <option value="MHF">MHF</option>
+    <option value="MHS">MHS</option>
+    <option value="MLS">MLS</option>
+    <option value="MMC">MMC</option>
+    <option value="MSL">MSL</option>
+    <option value="MTG">MTG</option>
+    <option value="MUC">MUC</option>
+    <option value="MUE">MUE</option>
+    <option value="MUG">MUG</option>
+    <option value="MUH">MUH</option>
+    <option value="MUL">MUL</option>
+    <option value="MUN">MUN</option>
+    <option value="MUO">MUO</option>
+    <option value="MUS">MUS</option>
+    <option value="MUT">MUT</option>
+    <option value="MVB">MVB</option>
+    <option value="MVJ">MVJ</option>
+    <option value="MVK">MVK</option>
+    <option value="MVP">MVP</option>
+    <option value="MVS">MVS</option>
+    <option value="MVV">MVV</option>
+    <option value="MVW">MVW</option>
+    <option value="NSP">NSP</option>
+    <option value="NUR">NUR</option>
+    <option value="OCE">OCE</option>
+    <option value="OSE">OSE</option>
+    <option value="PAD">PAD</option>
+    <option value="PAF">PAF</option>
+    <option value="PAZ">PAZ</option>
+    <option value="PCB">PCB</option>
+    <option value="PCO">PCO</option>
+    <option value="PEL">PEL</option>
+    <option value="PEM">PEM</option>
+    <option value="PEO">PEO</option>
+    <option value="PET">PET</option>
+    <option value="PGY">PGY</option>
+    <option value="PHH">PHH</option>
+    <option value="PHI">PHI</option>
+    <option value="PHM">PHM</option>
+    <option value="PHP">PHP</option>
+    <option value="PHT">PHT</option>
+    <option value="PHY">PHY</option>
+    <option value="PHZ">PHZ</option>
+    <option value="PLA">PLA</option>
+    <option value="POR">POR</option>
+    <option value="POS">POS</option>
+    <option value="POT">POT</option>
+    <option value="PPE">PPE</option>
+    <option value="PSB">PSB</option>
+    <option value="PSC">PSC</option>
+    <option value="PSY">PSY</option>
+    <option value="PUP">PUP</option>
+    <option value="PUR">PUR</option>
+    <option value="QMB">QMB</option>
+    <option value="REA">REA</option>
+    <option value="RED">RED</option>
+    <option value="REE">REE</option>
+    <option value="REL">REL</option>
+    <option value="RMI">RMI</option>
+    <option value="RTV">RTV</option>
+    <option value="RUS">RUS</option>
+    <option value="RUT">RUT</option>
+    <option value="SCC">SCC</option>
+    <option value="SCE">SCE</option>
+    <option value="SLS">SLS</option>
+    <option value="SOP">SOP</option>
+    <option value="SOW">SOW</option>
+    <option value="SPA">SPA</option>
+    <option value="SPB">SPB</option>
+    <option value="SPC">SPC</option>
+    <option value="SPM">SPM</option>
+    <option value="SPN">SPN</option>
+    <option value="SPT">SPT</option>
+    <option value="SPW">SPW</option>
+    <option value="SSE">SSE</option>
+    <option value="STA">STA</option>
+    <option value="SYA">SYA</option>
+    <option value="SYD">SYD</option>
+    <option value="SYG">SYG</option>
+    <option value="SYO">SYO</option>
+    <option value="SYP">SYP</option>
+    <option value="TAX">TAX</option>
+    <option value="THE">THE</option>
+    <option value="TPA">TPA</option>
+    <option value="TPP">TPP</option>
+    <option value="TSL">TSL</option>
+    <option value="TTE">TTE</option>
+    <option value="VIC">VIC</option>
+    <option value="WOH">WOH</option>
+    <option value="WST">WST</option>
+    <option value="ZOO">ZOO</option>
+</select> 
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+    CourseId Entry
+    <input id="courseIDEntry" type="text" placeholder = '4567'>
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+    Name Entry
+    <input id="nameEntry" type="text" placeholder = 'Intro to Chemistry'>
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+    Instructor Entry
+    <input id="instructorEntry" type="text" placeholder = 'Emerson'>
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+</form>
+
+<br>
+
+<button id="createClass">POST YOUR CLASS!</button>
+
+<br>
+
+<ul uk-accordion class="targetClass ">
+
+</ul>
+
+<br> {{!--
+<div> I am a sample message!</div>
+
+<br> --}} {{!--
+<form>
+    Your Name (autopopulate)
+    <input id="mynameEntry" type="text">
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+    Message
+    <input id="messageEntry" type="text">
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+    Rating
+    <input id="ratingEntry" type="text">
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+    Buying Book
+    <input id="buybookEntry" type="text">
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+    Selling Book
+    <input id="sellbookEntry" type="text">
+    <!-- Need a classes model. On click this posts a new class and updates the database. The class should have the data that the college system uses. -->
+</form>
+
+<br>
+
+<button id="createMessage">Post Message!</button>
+
+<br>
+
+<div class="targetMessages">
+
+</div> --}}
+
+<script type="text/javascript" src="../js/loggedinjs.js"></script>

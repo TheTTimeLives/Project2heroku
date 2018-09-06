@@ -1,0 +1,65 @@
+
+<h1>
+Welcome to our demo page to learn how to use sequelize!
+</h1>
+
+<h2>
+  Login to utilize our messaging system!
+</h2>
+
+<div id = "fbbutton">
+          <!-- facebook login button, scope decides what is passed but you have to specify on the facebook page for certain things -->
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+        </div>
+
+        <button id = "logout"> Logout</button>
+        
+
+Fill out name
+<form>
+  <input class="name" type="text">
+</form>
+
+ Fill out id
+<form>
+  <input class="id" type="text">
+</form>
+
+Fill out email
+
+<form>
+  <input class="email" type="text">
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2>
+    Click the button below to create a post! This post only lists the users info and allows you to update it, but we will re-rig it to post user messages.
+</h2>
+
+<h2>Fill out the forms to create a post on the form attached to an ID.</h2>
+<button id = "createPost">Let's get started!</button>
+
+<h3>This is our filter systems for sorting when our message system is online!</h3>
+<button id = "filterNames">Only Names</button>
+<button id = "filterEmail">Only E-Mails</button>
+
+
+<div class = "target">
+
+</div>
+
+
+
+
+
+
+<script type= "text/javascript" src="../js/js.js"></script>
+
+
