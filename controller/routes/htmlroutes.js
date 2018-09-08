@@ -7,6 +7,16 @@ module.exports = function (app) {
         res.render('index');
     });
 
+    app.get('/test', function (req, res) {
+        // res.send(console.log('Get at index has been pinged'));
+        res.render('blog');
+    });
+
+    app.get('/test', function (req, res) {
+        // res.send(console.log('Get at index has been pinged'));
+        res.sendFile('../../views/test.html');
+    });
+
     app.get('/edit/:id', function (req, res) {
         // res.send(console.log('Get at index has been pinged'));
         var id = req.params.id;

@@ -51,20 +51,20 @@ $(document).ready(function () {
 
                 $(`li[data-id =${response[i].id}]`).append(`<a class="uk-accordion-title" href="#">${response[i].subject} ${response[i].courseid} - ${response[i].name} - ${response[i].instructor}</a>`);
                 $(`li[data-id =${response[i].id}]`).append(`<div>  </div>`);
-                $(`li[data-id =${response[i].id}]`).append(`<button class = "editButton" data-id = ${response[i].id}> EDIT CLASS </div>`);
+                // $(`li[data-id =${response[i].id}]`).append(`<button class = "editButton" data-id = ${response[i].id}> EDIT CLASS </div>`);
                 // $(`li[data-id =${response[i].id}]`).append(`<br>`);
-                $(`li[data-id =${response[i].id}]`).append(`<form>`);
+                $(`li[data-id =${response[i].id}]`).append(`<form class='sidemargin'> Message <input id = "messageEntry" type="text" placeholder = '...'> Rating <input id = "ratingEntry" type="text" placeholder = '1-5'> Buying Book <input id = "buybookEntry" type="text" placeholder = 'y/n'> Selling Book <input id = "sellbookEntry" type="text" placeholder = 'y/n'> </form>`);
                 // $(`li[data-id =${response[i].id}]`).append(`Your Name (autopopulate)`);
                 // $(`li[data-id =${response[i].id}]`).append(`<input id = "mynameEntry" type="text">`);
-                $(`li[data-id =${response[i].id}]`).append(`Message`);
-                $(`li[data-id =${response[i].id}]`).append(`<input id = "messageEntry" type="text" placeholder = 'This is my message'>`);
-                $(`li[data-id =${response[i].id}]`).append(`Rating`);
-                $(`li[data-id =${response[i].id}]`).append(`<input id = "ratingEntry" type="text" placeholder = '1-5'>`);
-                $(`li[data-id =${response[i].id}]`).append(`Buying Book`);
-                $(`li[data-id =${response[i].id}]`).append(`<input id = "buybookEntry" type="text" placeholder = 'yes/no'>`);
-                $(`li[data-id =${response[i].id}]`).append(`Selling Book`);
-                $(`li[data-id =${response[i].id}]`).append(`<input id = "sellbookEntry" type="text" placeholder = 'yes/no'>`);
-                $(`li[data-id =${response[i].id}]`).append(`</form>`);
+                // $(`li[data-id =${response[i].id}]`).append(`Message`);
+                // $(`li[data-id =${response[i].id}]`).append(`<input id = "messageEntry" type="text" placeholder = '...'>`);
+                // $(`li[data-id =${response[i].id}]`).append(`Rating`);
+                // $(`li[data-id =${response[i].id}]`).append(`<input id = "ratingEntry" type="text" placeholder = '1-5'>`);
+                // $(`li[data-id =${response[i].id}]`).append(`Buying Book`);
+                // $(`li[data-id =${response[i].id}]`).append(`<input id = "buybookEntry" type="text" placeholder = 'y/n'>`);
+                // $(`li[data-id =${response[i].id}]`).append(`Selling Book`);
+                // $(`li[data-id =${response[i].id}]`).append(`<input id = "sellbookEntry" type="text" placeholder = 'y/n'>`);
+                // $(`li[data-id =${response[i].id}]`).append(`</form>`);
                 // $(`li[data-id =${response[i].id}]`);
                 $(`li[data-id =${response[i].id}]`).append(`<button id = "createMessage" data-id = ${response[i].id}>POST MESSAGE!</button>`);
                 $(`li[data-id =${response[i].id}]`).append(`<div class = "uk-accordion-content"><article class = 'uk-comment uk-comment-primary targetMessages' data-targetId = '${response[i].id}'></article></div>`);
@@ -123,8 +123,8 @@ $(document).ready(function () {
 
                 // $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<h4 class="uk-comment-title uk-margin-remove" data-id = ${response[i].classid}><a class="uk-link-reset" href="#">${response[i].name}</a></h4>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li>${response[i].rating}</li><li>${response[i].textbookSale}</li><li>${response[i].textbookBuy}</li></ul>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<p data-id = ${response[i].classid}>${response[i].message}</p>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li> Rating: ${response[i].rating}</li><li>Selling ${response[i].textbookSale}</li><li> Buying ${response[i].textbookBuy}</li></ul>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<p class = 'messagestyling' data-id = ${response[i].classid}>${response[i].message}</p>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<button class = "editButton" data-messageid = ${response[i].id} data-creator = ${response[i].creator}> EDIT MESSAGE </div>`); //have to grab the response creator
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
             }
@@ -194,46 +194,58 @@ $(document).ready(function () {
 
             for (i = 0; i < response.length; i++) {
 
+                // $('.targetClass').append(`<br>`);
+    
                 $('.targetClass').append(`<li class = 'daddy uk-open' data-id = ${response[i].id}></li>`);
-
-
-
-
+    
+    
+    
+    
                 console.log('LENGTH');
                 console.log(response.length);
                 console.log('LOOP TO CREATE OUR CLASSES')
-
+    
                 //Is it self appending?
-
+    
                 if (response[i].id == $(`li[data-id =${response[i].id}]`).attr('data-id')) {
-
+    
                     console.log('CONDITIONAL');
                     console.log(response[i].id);
-
+    
                     $(`li[data-id =${response[i].id}]`).append(`<a class="uk-accordion-title" href="#">${response[i].subject} ${response[i].courseid} - ${response[i].name} - ${response[i].instructor}</a>`);
                     $(`li[data-id =${response[i].id}]`).append(`<div>  </div>`);
-                    $(`li[data-id =${response[i].id}]`).append(`<button class = "editButton" data-id = ${response[i].id}> EDIT CLASS </div>`);
+                    // $(`li[data-id =${response[i].id}]`).append(`<button class = "editButton" data-id = ${response[i].id}> EDIT CLASS </div>`);
                     // $(`li[data-id =${response[i].id}]`).append(`<br>`);
-                    $(`li[data-id =${response[i].id}]`).append(`<form>`);
+                    $(`li[data-id =${response[i].id}]`).append(`<form class='sidemargin'> Message <input id = "messageEntry" type="text" placeholder = '...'> Rating <input id = "ratingEntry" type="text" placeholder = '1-5'> Buying Book <input id = "buybookEntry" type="text" placeholder = 'y/n'> Selling Book <input id = "sellbookEntry" type="text" placeholder = 'y/n'> </form>`);
                     // $(`li[data-id =${response[i].id}]`).append(`Your Name (autopopulate)`);
                     // $(`li[data-id =${response[i].id}]`).append(`<input id = "mynameEntry" type="text">`);
-                    $(`li[data-id =${response[i].id}]`).append(`Message`);
-                    $(`li[data-id =${response[i].id}]`).append(`<input id = "messageEntry" type="text">`);
-                    $(`li[data-id =${response[i].id}]`).append(`Rating`);
-                    $(`li[data-id =${response[i].id}]`).append(`<input id = "ratingEntry" type="text">`);
-                    $(`li[data-id =${response[i].id}]`).append(`Buying Book`);
-                    $(`li[data-id =${response[i].id}]`).append(`<input id = "buybookEntry" type="text">`);
-                    $(`li[data-id =${response[i].id}]`).append(`Selling Book`);
-                    $(`li[data-id =${response[i].id}]`).append(`<input id = "sellbookEntry" type="text">`);
-                    $(`li[data-id =${response[i].id}]`).append(`</form>`);
+                    // $(`li[data-id =${response[i].id}]`).append(`Message`);
+                    // $(`li[data-id =${response[i].id}]`).append(`<input id = "messageEntry" type="text" placeholder = '...'>`);
+                    // $(`li[data-id =${response[i].id}]`).append(`Rating`);
+                    // $(`li[data-id =${response[i].id}]`).append(`<input id = "ratingEntry" type="text" placeholder = '1-5'>`);
+                    // $(`li[data-id =${response[i].id}]`).append(`Buying Book`);
+                    // $(`li[data-id =${response[i].id}]`).append(`<input id = "buybookEntry" type="text" placeholder = 'y/n'>`);
+                    // $(`li[data-id =${response[i].id}]`).append(`Selling Book`);
+                    // $(`li[data-id =${response[i].id}]`).append(`<input id = "sellbookEntry" type="text" placeholder = 'y/n'>`);
+                    // $(`li[data-id =${response[i].id}]`).append(`</form>`);
                     // $(`li[data-id =${response[i].id}]`);
                     $(`li[data-id =${response[i].id}]`).append(`<button id = "createMessage" data-id = ${response[i].id}>POST MESSAGE!</button>`);
                     $(`li[data-id =${response[i].id}]`).append(`<div class = "uk-accordion-content"><article class = 'uk-comment uk-comment-primary targetMessages' data-targetId = '${response[i].id}'></article></div>`);
                     $(`li[data-id =${response[i].id}]`).append('<br>');
                     $(`li[data-id =${response[i].id}]`).append('<br>');
-
+    
                     // console.log($(`div[data-id = ${response[i].id}]`));
                 }
+    
+                // var classing = $('button[id = createMessage]');
+                // console.log(classing);
+    
+    
+                // $( "input[value='Hot Fuzz']" ).next().text( "Hot Fuzz" );
+                // console.log($( "input[value='Hot Fuzz']" ).next().text( "Hot Fuzz" ));
+    
+    
+    
             }
 
             $.get('/api/messages', function (response) {
@@ -246,7 +258,7 @@ $(document).ready(function () {
         
                 //It's not getting the id the second time
                 for (i = 0; i < response.length; i++) {
-        
+
                     // console.log($(this).parent().find('#mynameEntry').val());
         
                     console.log('TEST BELOW!');
@@ -269,8 +281,8 @@ $(document).ready(function () {
         
                         // $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
                         $(`article[data-targetId ='${response[i].classid}']`).append(`<h4 class="uk-comment-title uk-margin-remove" data-id = ${response[i].classid}><a class="uk-link-reset" href="#">${response[i].name}</a></h4>`);
-                        $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li>${response[i].rating}</li><li>${response[i].textbookSale}</li><li>${response[i].textbookBuy}</li></ul>`);
-                        $(`article[data-targetId ='${response[i].classid}']`).append(`<p data-id = ${response[i].classid}>${response[i].message}</p>`);
+                        $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li> Rating: ${response[i].rating}</li><li>Selling ${response[i].textbookSale}</li><li> Buying ${response[i].textbookBuy}</li></ul>`);
+                        $(`article[data-targetId ='${response[i].classid}']`).append(`<p class = 'messagestyling' data-id = ${response[i].classid}>${response[i].message}</p>`);
                         $(`article[data-targetId ='${response[i].classid}']`).append(`<button class = "editButton" data-messageid = ${response[i].id} data-creator = ${response[i].creator}> EDIT MESSAGE </div>`); //have to grab the response creator
                         $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
                     }
@@ -608,13 +620,29 @@ $(document).on('click', '#hasRating', function () {
 
                 // $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<h4 class="uk-comment-title uk-margin-remove" data-id = ${response[i].classid}><a class="uk-link-reset" href="#">${response[i].name}</a></h4>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li>${response[i].rating}</li><li>${response[i].textbookSale}</li><li>${response[i].textbookBuy}</li></ul>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<p data-id = ${response[i].classid}>${response[i].message}</p>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li> Rating: ${response[i].rating}</li><li>Selling ${response[i].textbookSale}</li><li> Buying ${response[i].textbookBuy}</li></ul>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<p class = 'messagestyling' data-id = ${response[i].classid}>${response[i].message}</p>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<button class = "editButton" data-messageid = ${response[i].id} data-creator = ${response[i].creator}> EDIT MESSAGE </div>`); //have to grab the response creator
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
-
             }
+
+            //     <article class="uk-comment uk-comment-primary"><!-- This will be the target messages with another id I guess I dunno but it's gonna have to work like this -->
+            //     <h4 class="uk-comment-title uk-margin-remove">
+            //         <a class="uk-link-reset" href="#">Author</a>
+            //     </h4>
+            //     <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+            //         <li>
+            //             <a href="#">12 days ago</a>
+            //         </li>
+            //         <li>
+            //             <a href="#">Reply</a>
+            //         </li>
+            //     </ul>
+            // <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            //     et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+            //     ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            //     </article>
+
 
         }
     })
@@ -659,13 +687,29 @@ $(document).on('click', '#sellingTextbook', function () {
 
                 // $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<h4 class="uk-comment-title uk-margin-remove" data-id = ${response[i].classid}><a class="uk-link-reset" href="#">${response[i].name}</a></h4>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li>${response[i].rating}</li><li>${response[i].textbookSale}</li><li>${response[i].textbookBuy}</li></ul>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<p data-id = ${response[i].classid}>${response[i].message}</p>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li> Rating: ${response[i].rating}</li><li>Selling ${response[i].textbookSale}</li><li> Buying ${response[i].textbookBuy}</li></ul>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<p class = 'messagestyling' data-id = ${response[i].classid}>${response[i].message}</p>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<button class = "editButton" data-messageid = ${response[i].id} data-creator = ${response[i].creator}> EDIT MESSAGE </div>`); //have to grab the response creator
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
-
             }
+
+            //     <article class="uk-comment uk-comment-primary"><!-- This will be the target messages with another id I guess I dunno but it's gonna have to work like this -->
+            //     <h4 class="uk-comment-title uk-margin-remove">
+            //         <a class="uk-link-reset" href="#">Author</a>
+            //     </h4>
+            //     <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+            //         <li>
+            //             <a href="#">12 days ago</a>
+            //         </li>
+            //         <li>
+            //             <a href="#">Reply</a>
+            //         </li>
+            //     </ul>
+            // <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            //     et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+            //     ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            //     </article>
+
 
         }
     })
@@ -710,13 +754,29 @@ $(document).on('click', '#buyingTextbook', function () {
 
                 // $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<h4 class="uk-comment-title uk-margin-remove" data-id = ${response[i].classid}><a class="uk-link-reset" href="#">${response[i].name}</a></h4>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li>${response[i].rating}</li><li>${response[i].textbookSale}</li><li>${response[i].textbookBuy}</li></ul>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<p data-id = ${response[i].classid}>${response[i].message}</p>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li> Rating: ${response[i].rating}</li><li>Selling ${response[i].textbookSale}</li><li> Buying ${response[i].textbookBuy}</li></ul>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<p class = 'messagestyling' data-id = ${response[i].classid}>${response[i].message}</p>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<button class = "editButton" data-messageid = ${response[i].id} data-creator = ${response[i].creator}> EDIT MESSAGE </div>`); //have to grab the response creator
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
-
             }
+
+            //     <article class="uk-comment uk-comment-primary"><!-- This will be the target messages with another id I guess I dunno but it's gonna have to work like this -->
+            //     <h4 class="uk-comment-title uk-margin-remove">
+            //         <a class="uk-link-reset" href="#">Author</a>
+            //     </h4>
+            //     <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+            //         <li>
+            //             <a href="#">12 days ago</a>
+            //         </li>
+            //         <li>
+            //             <a href="#">Reply</a>
+            //         </li>
+            //     </ul>
+            // <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            //     et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+            //     ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            //     </article>
+
 
         }
     })
@@ -761,13 +821,29 @@ $(document).on('click', '#hasReview', function () {
 
                 // $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<h4 class="uk-comment-title uk-margin-remove" data-id = ${response[i].classid}><a class="uk-link-reset" href="#">${response[i].name}</a></h4>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li>${response[i].rating}</li><li>${response[i].textbookSale}</li><li>${response[i].textbookBuy}</li></ul>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<p data-id = ${response[i].classid}>${response[i].message}</p>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"><li>${response[i].createdAt}</li> <li> Rating: ${response[i].rating}</li><li>Selling ${response[i].textbookSale}</li><li> Buying ${response[i].textbookBuy}</li></ul>`);
+                $(`article[data-targetId ='${response[i].classid}']`).append(`<p class = 'messagestyling' data-id = ${response[i].classid}>${response[i].message}</p>`);
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<button class = "editButton" data-messageid = ${response[i].id} data-creator = ${response[i].creator}> EDIT MESSAGE </div>`); //have to grab the response creator
                 $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
-                $(`article[data-targetId ='${response[i].classid}']`).append(`<br>`);
-
             }
+
+            //     <article class="uk-comment uk-comment-primary"><!-- This will be the target messages with another id I guess I dunno but it's gonna have to work like this -->
+            //     <h4 class="uk-comment-title uk-margin-remove">
+            //         <a class="uk-link-reset" href="#">Author</a>
+            //     </h4>
+            //     <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+            //         <li>
+            //             <a href="#">12 days ago</a>
+            //         </li>
+            //         <li>
+            //             <a href="#">Reply</a>
+            //         </li>
+            //     </ul>
+            // <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            //     et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+            //     ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            //     </article>
+
 
         }
     })

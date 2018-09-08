@@ -12,7 +12,8 @@
 
 $(document).ready(function () {
 
-   
+    
+
 
     $.get('/api/users', function (response) {
         console.log('ENTRIES BELOW');

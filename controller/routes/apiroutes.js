@@ -202,7 +202,6 @@ module.exports = function (app) {
 
     app.put('/api/update', function (req, res) {
         db.Message.update({
-            name: req.body.name,
             message: req.body.message,
             rating: req.body.rating,
             textbookSale: req.body.textbookSale,

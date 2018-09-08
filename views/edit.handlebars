@@ -1,99 +1,162 @@
+<link rel="stylesheet" href="/css/styles.css">
 
-<div>
-  <div> (Put message info here)</div>
 
-  <br> Your Name (autopopulate)
-  <input id="mynameEntry" type="text"> 
-  Message
-  <input id="messageEntry" type="text"> 
-  Rating
-  <input id="ratingEntry" type="text"> 
-  Buying Book
-  <input id="buybookEntry" type="text"> 
-  Selling Book
-  <input id="sellbookEntry" type="text">  
-  <br>
 
-  <h1>
-    Edit your message!
-  </h1>
+<div class='editbg'>
+    <h1 class='edityourmessage'>
+        Edit your message!
+    </h1>
 
-  <button id="editComplete">Change your data!</button>
-  <button id="destroyComplete">Delete your post!</button>
-  <h2>Fill out the forms to update your Message.</h2>
+    <div class='edithandlers'>
+        Message
+        <input id="messageEntry" type="text">
+    </div>
+    <div class='edithandlers'>
+        Rating
+        <input id="ratingEntry" type="text">
+    </div>
+    <div class='edithandlers'>
+        Buying Book
+        <input id="buybookEntry" type="text">
+    </div>
+    <div class='edithandlers'>
+        Selling Book
+        <input id="sellbookEntry" type="text">
+    </div>
+
+    <br>
+
+
+<div class = 'editchandlers'> 
+<button id="editComplete">Change your data!</button>
+    <button id="destroyComplete">Delete your post!</button>
+</div>
+    
 
 </div>
 
 <script>
 
-$(document).ready(function () {
-    
+    $(document).ready(function () {
 
-    $('#editComplete').on('click', function () {
 
-        console.log("Post Objects logging below!");
+        $('#editComplete').on('click', function () {
 
-        console.log($(this).parent().find('#mynameEntry').val());
-        console.log($(this).parent().find('#messageEntry').val());
-        console.log($(this).parent().find('#ratingEntry').val());
-        console.log($(this).parent().find('#buybookEntry').val());
-        console.log($(this).parent().find('#sellbookEntry').val());
-        console.log($(this).attr('data-id'));
+            console.log("Post Objects logging below!");
 
-        var url = window.location.href;
-        console.log(url);
-        var postId = url.split("editroute/")[1];
-        var postedId = postId.split('/')[1];
-        console.log(postId);
-        console.log(postedId);
+            console.log($(this).parent().find('#mynameEntry').val());
+            console.log($(this).parent().find('#messageEntry').val());
+            console.log($(this).parent().find('#ratingEntry').val());
+            console.log($(this).parent().find('#buybookEntry').val());
+            console.log($(this).parent().find('#sellbookEntry').val());
+            console.log($(this).attr('data-id'));
 
-        var update = {
-            name: $(this).parent().find('#mynameEntry').val(),
-            message: $(this).parent().find('#messageEntry').val(),
-            rating: $(this).parent().find('#ratingEntry').val(),
-            textbookSale: $(this).parent().find('#sellbookEntry').val(),
-            textbookBuy: $(this).parent().find('#buybookEntry').val(),
-            classid: postedId //this is the only thing that is working for any post other than the first elements post
-        }
+            var url = window.location.href;
+            console.log(url);
+            var postId = url.split("editroute/")[1];
+            var postedId = postId.split('/')[1];
+            console.log(postId);
+            console.log(postedId);
 
-        $.ajax({
-             method: "PUT",
-             url: '/api/update',
-             data: update
-         })
-             .then(function () {
-                 //   window.location.href = "/blog";
-                 console.log('I got a response');
-                  window.location.href = '/index'
-             });
-     
+            var update = {
 
-    })
+                message: $(this).parent().find('#messageEntry').val(),
+                rating: $(this).parent().find('#ratingEntry').val(),
+                textbookSale: $(this).parent().find('#sellbookEntry').val(),
+                textbookBuy: $(this).parent().find('#buybookEntry').val(),
+                classid: postedId //this is the only thing that is working for any post other than the first elements post
+            }
 
-  
+            $.ajax({
+                method: "PUT",
+                url: '/api/update',
+                data: update
+            })
+                .then(function () {
+                    //   window.location.href = "/blog";
+                    console.log('I got a response');
+                    window.location.href = '/index'
+                });
+
+
+        })
+
+
         // var update = {
         //     name: $(".name").val(),
         //     email: $('.email').val(),
         //     userid: postId
         // }
 
-         
 
-    $(document).on('click', '#createMessage', function () {
-        //event listener variables can't take things from outside the listener
 
-        
+        $(document).on('click', '#createMessage', function () {
+            //event listener variables can't take things from outside the listener
 
-       
-        console.log(postObject);
-        console.log('THIS data-id below');
-        console.log($(this).attr('data-id'));
 
-        $.post('/messages', postObject, function (err, response) {
-            console.log('Response message');
-            console.log(response);
-            //the code that will put the object up on the front page
+
+
+            console.log(postObject);
+            console.log('THIS data-id below');
+            console.log($(this).attr('data-id'));
+
+            $.post('/messages', postObject, function (err, response) {
+                console.log('Response message');
+                console.log(response);
+                //the code that will put the object up on the front page
+            })
+
         })
+
+
+
+
+
+
+
+
+
+
+
+
+        $('#destroyComplete').on('click', function () {
+            console.log("Destroy Objects logging below!");
+
+            console.log($(this).parent().find('#mynameEntry').val());
+            console.log($(this).parent().find('#messageEntry').val());
+            console.log($(this).parent().find('#ratingEntry').val());
+            console.log($(this).parent().find('#buybookEntry').val());
+            console.log($(this).parent().find('#sellbookEntry').val());
+            console.log($(this).attr('data-id'));
+
+            var url = window.location.href;
+            console.log(url);
+            var postId = url.split("editroute/")[1];
+            var postedId = postId.split('/')[1];
+            console.log(postId);
+            console.log(postedId);
+
+            var update = {
+                name: $(this).parent().find('#mynameEntry').val(),
+                message: $(this).parent().find('#messageEntry').val(),
+                rating: $(this).parent().find('#ratingEntry').val(),
+                textbookSale: $(this).parent().find('#sellbookEntry').val(),
+                textbookBuy: $(this).parent().find('#buybookEntry').val(),
+                classid: postedId //this is the only thing that is working for any post other than the first elements post
+            }
+
+            $.ajax({
+                method: "DELETE",
+                url: `/api/delete/${postedId}`,
+            })
+                .then(function () {
+                    //   window.location.href = "/blog";
+                    console.log('I got a response');
+                    window.location.href = '/index'
+                });
+        })
+
+
 
     })
 
@@ -105,60 +168,5 @@ $(document).ready(function () {
 
 
 
-
-
-
-    $('#destroyComplete').on('click', function () {
-        console.log("Destroy Objects logging below!");
-
-        console.log($(this).parent().find('#mynameEntry').val());
-        console.log($(this).parent().find('#messageEntry').val());
-        console.log($(this).parent().find('#ratingEntry').val());
-        console.log($(this).parent().find('#buybookEntry').val());
-        console.log($(this).parent().find('#sellbookEntry').val());
-        console.log($(this).attr('data-id'));
-
-        var url = window.location.href;
-        console.log(url);
-        var postId = url.split("editroute/")[1];
-        var postedId = postId.split('/')[1];
-        console.log(postId);
-        console.log(postedId);
-
-        var update = {
-            name: $(this).parent().find('#mynameEntry').val(),
-            message: $(this).parent().find('#messageEntry').val(),
-            rating: $(this).parent().find('#ratingEntry').val(),
-            textbookSale: $(this).parent().find('#sellbookEntry').val(),
-            textbookBuy: $(this).parent().find('#buybookEntry').val(),
-            classid: postedId //this is the only thing that is working for any post other than the first elements post
-        }
-    
-        $.ajax({
-            method: "DELETE",
-            url: `/api/delete/${postedId}`,
-        })
-            .then(function () {
-                //   window.location.href = "/blog";
-                console.log('I got a response');
-                 window.location.href = '/index'
-            });
-    })
-    
-
-
-})
-
-
-
-
-
-
-
-
-
-</script>
-
-{{! This is the problem it's the link tag not being used correctly weirdly}}
-
-{{!-- <script type="text/javascript" src="../js/edit.js"></script> --}}
+</script> {{! This is the problem it's the link tag not being used correctly weirdly}} {{!--
+<script type="text/javascript" src="../js/edit.js"></script> --}}

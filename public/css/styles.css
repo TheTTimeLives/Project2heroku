@@ -1,3 +1,777 @@
-h1{
-    color: blue;
+button{
+    background-color: rgb(202, 202, 202);
+    border: none;
+    border-radius: 6px;
+    /* color: white; */
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: 'Kosugi Maru', sans-serif;
+
+}
+
+
+
+select{
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+::-webkit-input-placeholder {
+    
+    font-family: 'Kosugi Maru', sans-serif;
+ }
+
+ .messagestyling{
+     font-size: 20px;
+ }
+
+
+
+#fbbutton{
+    position: fixed;
+    left:47%;
+    top:70%;
+}
+
+h3{
+    /* color: blue; */
+}
+
+.header{
+    color:white;
+    margin: 0;
+    font-family: 'Cabin Sketch', cursive;
+
+}
+
+h2{
+    color:white;
+}
+
+.uk-link-reset{
+    font-family: 'Kosugi Maru', sans-serif;
+
+    /* font-family: 'Knewave', cursive; */
+
+}
+
+
+.topheadermargin{
+    position: relative;
+    top: 8px;
+    left: 15px;
+    font-size: 30px;
+    font-family: 'Kosugi Maru', sans-serif;
+    
+
+/* font-family: 'Bungee Shade', cursive; */
+
+}
+
+.find{
+    margin: 10px;
+    margin-left:0px;
+    margin-right: 0px;
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    /* background-color: rgb(44, 44, 44); */
+    border: 3px solid white;
+    border-radius: 6px;
+
+    padding: 10px;
+    font-family: 'Cabin Sketch', cursive;
+
+    
+}
+
+.bottomheadermargin{
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+
+}
+
+.sidemargin{
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    /* left: 10px;
+    right: 10px; */
+    font-family: 'Kosugi Maru', sans-serif;
+
+}
+
+#createClass{
+    position:relative;
+    margin:10px;
+    /* top:27px; */
+}
+
+.uk-accordion-title{
+    position:relative;
+    margin:10px;
+    margin-bottom: 15px;
+    top:9px;
+    font-size: 30px;
+    /* font-family: 'Ultra', serif;
+font-family: 'Neucha', cursive;
+font-family: 'Oleo Script', cursive;
+font-family: 'Covered By Your Grace', cursive;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Homemade Apple', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Damion', cursive;
+font-family: 'Yellowtail', cursive;
+font-family: 'Nothing You Could Do', cursive;
+font-family: 'Knewave', cursive;
+font-family: 'Gochi Hand', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Reenie Beanie', cursive;
+font-family: 'Love Ya Like A Sister', cursive;
+font-family: 'Berkshire Swash', cursive;
+font-family: 'Baloo', cursive;
+font-family: 'Kurale', serif;
+font-family: 'Allerta Stencil', sans-serif;
+font-family: 'Wendy One', sans-serif;
+font-family: 'Nanum Brush Script', cursive;
+font-family: 'Zeyada', cursive;
+font-family: 'Gaegu', cursive;
+font-family: 'Londrina Outline', cursive;
+font-family: 'Just Me Again Down Here', cursive;
+font-family: 'McLaren', cursive;
+font-family: 'Bungee Shade', cursive;
+font-family: 'League Script', cursive;
+font-family: 'Overlock SC', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Mukta', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'M PLUS Rounded 1c', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Noto Sans', sans-serif; */
+font-family: 'Kosugi Maru', sans-serif;
+/* font-family: 'Nunito', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Hind', sans-serif; */
+
+
+}
+
+.uk-accordion-content{
+    font-family: 'Kosugi Maru', sans-serif;
+
+    /* font-family: 'Knewave', cursive; */
+}
+
+
+
+
+.editButton{
+    position:relative;
+    /* left: 10px; */
+    margin-bottom:10px;
+}
+
+#createMessage{
+    position: relative;
+    bottom:9px;
+    left: 10px;
+    right: 10px;
+
+}
+
+.classFilterAlign{
+    /* display:inline; */
+    position:relative;
+    float:right;
+    text-align: right;
+    right: 10px;
+    top:15px;
+}
+
+
+#logout{
+    /* display:block; */
+    position: relative;
+    bottom: 10px;
+    /* float: right; */
+}
+
+.entry{
+    position: relative;
+    display:inline;
+    font-family: 'Kosugi Maru', sans-serif;
+
+    /* margin-left:5px;
+    margin-right:5px; */
+}
+
+.classFilters{
+    background-color: burlywood;
+    background-image: url('../assets/lightbrownwood.png');
+    box-shadow: inset 0 0 20px black;
+    /* background-position: center;  */
+
+
+}
+
+#classFilterEntry{
+    position:relative;
+    bottom: 7px;
+    margin-left:12px;
+}
+
+#classFilter{
+    position:relative;
+    bottom: 7px;
+}
+
+
+.messageColor{
+    border-top: 3px solid white;
+    /* border-radius: 6px; */
+
+    background-color: rgb(192, 159, 115);
+    background-image: url('../assets/darkbrownwood.png');
+    box-shadow: inset 0 0 20px black;
+    /* background-position: center;  */
+
+
+}
+
+#logAlign{
+    display:inline;
+    position: relative;
+    /* display:block;
+    float: right;  */
+    right:0px;
+    margin-bottom: 10px;
+    text-align: right;
+    top:20px;
+    
+
+}
+
+#myname{
+    /* position: relative;
+    display:inline;
+    right:0px; */
+    color:white;
+    margin:0;
+    font-family: 'Cabin Sketch', cursive;
+
+    
+
+}
+
+.loggedin{
+    /* position: relative;
+    display: inline;
+    right:0px; */
+    color:white;
+    margin:0;
+    font-family: 'Cabin Sketch', cursive;
+
+   
+}
+
+body{
+    background-image: url("../assets/chalkboard.png");
+    
+    background-position: center; 
+    box-shadow: inset 0 0 500px black;
+
+    
+    
+  }
+
+  .center{
+    margin: auto;
+    width: 75%;
+    border: 3px solid white;
+    border-radius: 6px;
+
+    padding: 10px;
+  }
+  
+  .white {
+    color: white;
+  }
+  
+  
+   .pt-perspective {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+  }
+  
+  .pt-page {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      overflow: hidden;
+      backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+  }
+  
+  .pt-page-current,
+  .no-js .pt-page {
+      visibility: visible;
+  }
+  
+  .no-js body {
+      overflow: auto;
+  }
+  
+  .pt-page-ontop {
+      z-index: 999;
+  }
+  
+  .pt-page-scaleDown {
+      animation: scaleDown .7s ease both;
+  }
+  
+  .pt-page-scaleUp {
+      animation: scaleUp .7s ease both;
+  }
+  
+  .pt-page-scaleUpDown {
+      animation: scaleUpDown .5s ease both;
+  }
+  
+  .pt-page-scaleDownUp {
+      animation: scaleDownUp .5s ease both;
+  }
+  
+  .pt-page-scaleDownCenter {
+      animation: scaleDownCenter .4s ease-in both;
+  }
+  
+  .pt-page-scaleUpCenter {
+      animation: scaleUpCenter .4s ease-out both;
+  }
+  
+  /************ keyframes ************/
+  
+  /* scale and fade */
+  
+  
+    
+    #bgimage {
+      background-image: url("../images/loop2.gif");
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      
+      
+    }
+  
+  
+    .fixed {
+        
+        position: fixed;
+        bottom: 0px;
+    }
+  
+    .quote {
+        color: white;
+    }
+  
+    .down {
+        position: relative;
+        top: 190px;
+    }
+  
+    .opacity{
+        opacity: .5;
+    }
+  
+    /* nav{
+      background-color:rgba(0,0,0,.5);
+      border-radius: 90px;
+      width: 18%;
+      position: fixed;
+      right: 0;
+  
+    } */
+  
+    nav{
+      background-image: url("../images/funky-linesblack.png")
+    }
+  
+    nav{
+      background-color: gray;
+    }
+  
+    .control{
+      height: 555px;
+      overflow:auto;
+      
+    }
+  
+    .opacity2{
+      background-color:black;
+      opacity: .5;
+  }
+  
+    .opacityb {
+        opacity:1;
+    }
+  
+    .bg {
+        background-image: url("../images/funky-linesblack.png")
+    }
+  
+    .width {
+        width: 90%;
+    }
+  
+    .smaller{
+      width: 90%;
+    }
+  
+    .card-panel {
+        margin: 3% 1%;
+        margin-bottom: 0%;
+        color: white;
+        
+        border-radius: 80px;
+  
+        background-color:rgba(0,0,0,.5);
+  
+        /* background-image: url("../images/funky-linesblack.png"); */
+  
+        /* opacity: .5; */
+    }
+  
+    .margin {
+      margin: 8%;
+    }
+  
+    .containerb {
+      width: 70%;
+  }
+        
+  .transform {
+      transform: scale(.8);
+  }
+  
+  
+  .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -100;
+    }
+    
+    .fullscreen-bg__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .pt-page-scaleUpDown {
+      animation: scaleUpDown .5s ease both;
+    }
+  
+    .pt-page-rotateRoomLeftOut {
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+      -webkit-animation: rotateRoomLeftOut .8s both ease;
+      animation: rotateRoomLeftOut .8s both ease;
+    }
+    .pt-page-rotateRoomLeftIn {
+      -webkit-transform-origin: 0% 50%;
+      transform-origin: 0% 50%;
+      -webkit-animation: rotateRoomLeftIn .8s both ease;
+      animation: rotateRoomLeftIn .8s both ease;
+    }
+    .pt-page-rotateRoomRightOut {
+      -webkit-transform-origin: 0% 50%;
+      transform-origin: 0% 50%;
+      -webkit-animation: rotateRoomRightOut .8s both ease;
+      animation: rotateRoomRightOut .8s both ease;
+    }
+    .pt-page-rotateRoomRightIn {
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+      -webkit-animation: rotateRoomRightIn .8s both ease;
+      animation: rotateRoomRightIn .8s both ease;
+    }
+    
+    @media (min-aspect-ratio: 16/9) {
+      .fullscreen-bg__video {
+        height: 300%;
+        top: -100%;
+      }
+    }
+    
+    @media (max-aspect-ratio: 16/9) {
+      .fullscreen-bg__video {
+        width: 300%;
+        left: -100%;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .fullscreen-bg {
+        background: url('../assets/launch.png') center center / cover no-repeat;
+      }
+    
+      .fullscreen-bg__video {
+        display: none;
+      }
+  
+      .bgvid{
+        min-width: 100%;
+      min-height: 100%;
+  
+      }
+    }
+  
+  @media only screen and (max-width: 1520px) {
+      #bgimage {
+          background-image: url("../images/funky-lines.png") center center cover no-repeat fixed;
+          height: 870px;
+          
+        }
+    }
+  
+    @keyframes scaleDown {
+      to { opacity: 0; transform: scale(.8); }
+    }
+    
+    @keyframes scaleUp {
+      from { opacity: 0; transform: scale(.8); }
+    }
+    
+    @keyframes scaleUpDown {
+      from { opacity: 0; transform: scale(1.2); }
+    }
+    
+    @keyframes scaleDownUp {
+      to { opacity: 0; transform: scale(1.2); }
+    }
+    
+    @keyframes scaleDownCenter {
+      to { opacity: 0; transform: scale(.7); }
+    }
+    
+    @keyframes scaleUpCenter {
+      from { opacity: 0; transform: scale(.7); }
+    }
+     
+    
+    
+    .nothing{
+      position: relative;
+    }
+  
+    .jspContainer
+  {
+      overflow: hidden;
+      position: relative;
+  }
+  
+  .jspPane
+  {
+      position: absolute;
+  }
+  
+  .jspVerticalBar
+  {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 16px;
+      height: 100%;
+      background: red;
+  }
+  
+  .jspHorizontalBar
+  {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 16px;
+      background: red;
+  }
+  
+  .jspCap
+  {
+      display: none;
+  }
+  
+  .jspHorizontalBar .jspCap
+  {
+      float: left;
+  }
+  
+  .jspTrack
+  {
+      background: #dde;
+      position: relative;
+  }
+  
+  .jspDrag
+  {
+      background: #bbd;
+      position: relative;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+  }
+  
+  .jspHorizontalBar .jspTrack,
+  .jspHorizontalBar .jspDrag
+  {
+      float: left;
+      height: 100%;
+  }
+  
+  .jspArrow
+  {
+      background: #50506d;
+      text-indent: -20000px;
+      display: block;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .jspArrow.jspDisabled
+  {
+      cursor: default;
+      background: #80808d;
+  }
+  
+  .jspVerticalBar .jspArrow
+  {
+      height: 16px;
+  }
+  
+  .jspHorizontalBar .jspArrow
+  {
+      width: 16px;
+      float: left;
+      height: 100%;
+  }
+  
+  .jspVerticalBar .jspArrow:focus
+  {
+      outline: none;
+  }
+  
+  .jspCorner
+  {
+      background: #eeeef4;
+      float: left;
+      height: 100%;
+  }
+  
+  /* Yuk! CSS Hack for IE6 3 pixel bug :( */
+  * html .jspCorner
+  {
+      margin: 0 -3px 0 0;
+  }
+  
+  .daddy{
+    margin:0;
+    margin-bottom: 5px;
+    background-color:rgba(253, 253, 253, 0.726);
+    background-image: url('../assets/metal.jpg');
+    box-shadow: inset 0 0 50px black;
+
+    
+    /* background-image: url('../assets/lightbrownwood.png'); */
+
+    border: 3px solid white;
+    border-radius: 6px;
+
+    /* border-top: 2px; */
+    /* padding: 10px; */
+}
+
+.border{
+    /* margin:0;
+    margin-bottom: 5px;
+    background-color:rgba(253, 253, 253, 0.726); */
+    border: 3px solid white;
+    border-radius: 6px;
+
+    /* border-top: 2px; */
+    /* padding: 10px; */
+}
+
+.edityourmessage{
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    font-family: 'Kosugi Maru', sans-serif;
+
+}
+
+.edithandlers{
+    position: relative;
+    left: 10px;
+    font-family: 'Kosugi Maru', sans-serif;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.editchandlers{
+    position: relative;
+    left: 10px;
+    margin-bottom: 10px;
+}
+
+.editbg{
+    background-image: url('../assets/lightbrownwood.png');
+    border: 3px solid white;
+    border-radius: 6px;
+}
+
+
+
+.uk-accordion{
+    margin:0;
+}
+
+.uk-comment{
+    
+    /* background-image: url('../assets/whiteboard.jpg'); */
+    box-shadow: inset 0 0 50px black;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+
+
+    background-position: center; 
+
+    margin:0;
+}
+
+.uk-open{
+    margin:0;
+}
+
+.uk-accordion>:nth-child(n+2) {
+    margin:0;
 }
